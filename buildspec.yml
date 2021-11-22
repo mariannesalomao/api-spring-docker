@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  build:
+    commands:
+      - mvn clean install -DskipTests
+  post_build:
+    commands:
+      - aws s3 cp target/api-spring-docker-0.0.1-SNAPSHOT.jar s3://api-spring-docker-s3 --recursive --acl public-read
+
