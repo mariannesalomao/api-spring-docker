@@ -8,7 +8,7 @@
 
 <div th:if="${param.error}">Senha ou usuário inválido!</div>
 
-<div th:if="${param.logout}">Você está desconectado!</div>
+<div th:if="${param.logout}">Você está desconectado! Conecte-se de novo</div>
 
 <form th:action="@{/login}" method="post">
 
